@@ -1,0 +1,9 @@
+﻿[Arrow]
+Path=00_stand.cur
+
+[Hand]
+Path=01_attack.cur
+
+[Wait]
+Path=11.ani
+
