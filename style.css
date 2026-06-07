@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Minecraft';
     src: url('database/mv_fonts/minecraft.otf') format('truetype');
-    font-weight: ;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -89,7 +89,7 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { font-family: var(--ff-poppins); }
+html { font-family: var(--ff-poppins); scroll-behavior: smooth; }
 
 body { 
     background: var(--smoky-black); 
@@ -110,21 +110,30 @@ body::after {
             rgba(0,0,0,0.45) 100%
         );
 }
-/* === BACKGROUND VIDEO === */
 
 .vhs-container {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     z-index: -3;
+    pointer-events: none;
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 #bg-video {
     position: absolute;
-    inset: 0;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: translate(-50%, -50%);
+    backface-visibility: hidden;
+    perspective: 1000;
 }
 
 .vhs-overlay {
@@ -593,7 +602,7 @@ article { display: none; }
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh; /* Altura dinámica que se adapta perfectamente en smartphones */
     background: hsl(0, 0%, 5%);
     opacity: 0;
     visibility: hidden;
@@ -687,7 +696,7 @@ article { display: none; }
 }
 
 .clients-item {
-    width: 25%;
+    width: 20%;
     scroll-snap-align: start;
 }
 
@@ -1228,8 +1237,8 @@ textarea.form-input {
     }
 
     .service-icon-box {
-        margin-bottom: 0;
-        margin-top: 5px;
+        margin-bottom: auto;
+        margin-top: auto;
     }
 
     .service-content-box { text-align: left; }
@@ -1304,7 +1313,7 @@ textarea.form-input {
         scroll-padding-inline: 45px;
     }
 
-    .clients-item { min-width: calc(33..33% - 35px); }
+    .clients-item { min-width: calc(33.33% - 35px); }
 
     .timeline-list { margin-left: 65px; }
 
@@ -1451,7 +1460,7 @@ textarea.form-input {
 
     .modal-img-wrapper > img { top: 20px; }
 
-    .clients-item { min-width: calc(25% - 15px); }
+    .clients-item { min-width: calc(20% - 15px); }
 
     .project-list { grid-template-columns: repeat(3, 1fr); }
 
